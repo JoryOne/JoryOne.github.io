@@ -1,1 +1,0 @@
-# JoryOne.github.io
