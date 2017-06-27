@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 20px/2.0 "Lato","Helvetica Neue","PingFang-SC-Regular","STHeiti", "Helvetica","Arial","Verdana","sans-serif","Microsoft YaHei", arial, sans-serif;
+    color: #333;
+}
+
+::selection {
+    background: #222;
+    color: white;
+}
+
+a {
+    color: #333;
+}
+
+p {
+    margin: 20px 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.jory {
+    position: relative;
+    margin: 100px auto 0;
+    width: 960px;
+}
+
+@media (max-width: 767px) {
+    .jory {
+        margin-top: 50px;
+        width: auto;
+    }
+}
+
+.jory h1 {
+    text-align: center;
+    position: relative;
+    top: -10px;
+    opacity: 0;
+}
+
+.quote {
+    position: relative;
+    margin: 40px 0;
+    color: #666;
+    text-align: center;
+}
+
+.quote::before, .quote::after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 24px;
+    opacity: 0.2;
+
+}
+
+
+.quote cite::before {
+    content: "-";
+    padding: 0 5px;
+}
+
+.quote p, .quote div {
+    text-align: center
+}
+
+.quote-text {
+
+}
+
+.menu {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.menu a {
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu a:hover {
+    border-bottom: 1px solid #333;
+}
+
+.menu a:active {
+    top: 1px !important;
+}
+
+.menu a:first-child {
+    margin-left: 0;
+}
+
+.sidebar {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+@media (max-width: 767px) { 
+    .sidebar {
+        padding: 0 40px;
+    }
+}
+
+.location {
+    margin-top: 40px;
+    text-align: center;
+}
+.location-text {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    line-height: 40px;
+}
+
+.relocating {
+    opacity: 0;
+    color: #ccc;
+    font-size: 13px;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.content {
+    display: none;
+    position: relative;
+    margin-left: 400px;
+}
+
+.close {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+}
+
+.animate-init {
+    position: relative;
+    top: -10px;
+    opacity: 0;
+}
+
+.hidden { 
+    display: none; 
+}
+
+.fm-icon {
+    font-size:25px;
+    color:#666;
+    margin:20px;
+    cursor:pointer;
+}
+.fm-container {
+    text-align: center;
+    background: #efefef;
+}
+
+.process-bar {
+    width: 0%;
+    background: #999;
+    height: 2px;
+}
