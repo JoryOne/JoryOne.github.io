@@ -36,7 +36,6 @@
             <a href="/" class="animate-init">Home</a>
             <a href="/n" class="animate-init">Notes</a>
             <a href="https://github.com/JoryOne" class="animate-init">GitHub</a>
-            <a href="https://coding.net/u/JoryOne" class="animate-init">Coding</a>
         </div>
         <div class="location">
             <span class="animate-init ion-ios-location-outline" style="font-size:20px;display: inline-block;"></span>
@@ -45,6 +44,7 @@
     </div>
 </div>
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="list.js"></script>
 <script>
     var timer = null;
     $(document).ready(function () {
@@ -109,27 +109,6 @@
             $(".process-bar").css('width','0%');
             randomPlay();
         }
-
-        var list = {
-                    "data":[
-                                {
-                                        "title":"朱七-青春",
-                                        "src":"http://orzpa0sf9.bkt.clouddn.com/zq-qc.mp3"
-                               },
-                                {
-                                        "title":" 赵雷-青春无处安放",
-                                        "src":"http://orzpa0sf9.bkt.clouddn.com/zl-qcwuaf.mp3"
-                               },
-                                {
-                                        "title":" 靳松-独自旅行",
-                                        "src":"http://orzpa0sf9.bkt.clouddn.com/js-dzlx.mp3"
-                               },
-                                {
-                                        "title":" 靳松-老路小路",
-                                        "src":"http://orzpa0sf9.bkt.clouddn.com/js-llxl.mp3"
-                               }
-                    ]
-            };
         var listData = list.data;
         var listLength = listData.length;
         var currentMusic = parseInt(Math.random() * listLength);
