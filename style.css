@@ -170,3 +170,15 @@ ul, ol {
     background: #999;
     height: 2px;
 }
+
+@media (max-width: 767px) {
+    .jory-10086 {
+        margin-left: -25px;
+    }
+}
+
+@media (min-width: 769px) {
+    .jory-10086 {
+        margin-left: 100px;
+    }
+}
