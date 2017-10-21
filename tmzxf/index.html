@@ -14,18 +14,27 @@
 
 <body>
 <div class="jory">
-    <div class="sidebar">
+    <div class="sidebar" id="app" v-cloak>
         <div class="header">
             <h2>《他们最幸福》</h2>
+            <div>
+                <md-avatar class="md-large">
+                  <img src="assets/123.png" alt="People">
+                </md-avatar>
+                <md-progress :md-progress="60"></md-progress>
+            </div>
             <div class="quote">
                 <p class="quote-text">&nbsp;&nbsp;&nbsp;&nbsp;浪迹天涯的孩子，忽晴忽雨的江湖，祝你有梦为马，永远随处可栖。</p>
             </div>
         </div>
-        <div id="app">
+        <div >
             <md-list>
-              <md-list-item v-for ="item in list">
+              <md-list-item @click="" v-for ="item in list">
+                <md-icon md-src="./assets/ing.svg">watch_later</md-icon>
                 <span >{{item.name}}</span> 
-                <span class="ion-ios-play-outline"></span>
+                <md-button class="md-icon-button md-list-action">
+                   <md-icon md-src="./assets/play.svg">watch_later</md-icon>
+                </md-button>
                 <md-divider></md-divider>
               </md-list-item>
             </md-list>
