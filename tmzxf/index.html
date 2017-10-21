@@ -5,29 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Jory|《他们最幸福》</title>
-    <link rel="icon" href="favicon.ico?v=1.1" />
-    <link type="text/css"rel="stylesheet"  href="../style.css"/>
+    <link rel="icon" href="../favicon.ico?v=1.1" />
+    
+    <link rel="stylesheet" href="http://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/vue-material/0.7.5/vue-material.css"/>
+    <link type="text/css" rel="stylesheet"  href="style.css"/>
 </head>
 
 <body>
 <div class="jory">
     <div class="sidebar">
         <div class="header">
+            <h2>《他们最幸福》</h2>
             <div class="quote">
-                <p class="quote-text">浪迹天涯的孩子，忽晴忽雨的江湖，祝你有梦为马，永远随处可栖。</p>
+                <p class="quote-text">&nbsp;&nbsp;&nbsp;&nbsp;浪迹天涯的孩子，忽晴忽雨的江湖，祝你有梦为马，永远随处可栖。</p>
             </div>
         </div>
-        <div class="menu">
-            <a href="/">Home</a>
+        <div id="app">
+            <md-list>
+              <md-list-item v-for ="item in list">
+                <span >{{item.name}}</span> 
+                <span class="ion-ios-play-outline"></span>
+                <md-divider></md-divider>
+              </md-list-item>
+            </md-list>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-material/0.7.5/vue-material.js"></script>
+<script src="main.js"></script>
 <script>
-    $(document).ready(function () {
-        
-    });
-
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
