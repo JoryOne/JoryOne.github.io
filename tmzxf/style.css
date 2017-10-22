@@ -39,3 +39,10 @@ body {
 [v-cloak] {
   display:none !important;
 }
+.demo-slider {
+  margin-bottom: 16px;
+}
+
+.ingCls {
+    display:"";
+}
