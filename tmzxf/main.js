@@ -1,5 +1,23 @@
 Vue.use(VueMaterial);
-new Vue({
+
+function getX(obj){ 
+	var parObj=obj; 
+	var left=obj.offsetLeft; 
+	while(parObj=parObj.offsetParent){ 
+	    left+=parObj.offsetLeft; 
+	} 
+	return left; 
+}  
+
+window.calCoord = function(event){
+   var top,left,oDiv; 
+    oDiv=document.getElementById("processBar"); 
+    left=getX(oDiv); 
+    var aaa = event.clientX-left+document.documentElement.scrollLeft +1; 
+    mainApp.process = aaa/oDiv.clientWidth * 100;
+    mainApp.proValue.left = mainApp.process + '%';
+}
+var mainApp = new Vue({
   el: '#app',
   data () {
 	    return {
@@ -19,7 +37,11 @@ new Vue({
 	        {'name': '西藏往事（三）', 'time': '2016-03-06'},
 	        {'name': '不用手机的女孩', 'time': '2016-11-02'}
 	      ],
-	      rating7:[0,10]
+	      rating7:[0,10],
+	      process:30,
+	      proValue : {
+            left : '30%'
+          }
 	    }
     }
 })

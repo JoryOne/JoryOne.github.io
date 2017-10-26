@@ -8,13 +8,39 @@ body {
 .jory {
     position: relative;
     margin: 100px auto 0;
-    width: 960px;
+}
+
+
+.tip_cls{
+    position:absolute;
+    margin-top:-13px;
+    width:20px;
+    height:20px;
+    border-radius: 20px;
+    left:50%;
+    margin-left:-10px;
+    background-color: #3f51b5;
+}
+
+.jmd-large{
+    width:164px!important;
+    min-width:164px!important;
+    height:164px!important;
+    min-height: 164px!important;
+    border-radius: 164px!important;
 }
 
 @media (max-width: 767px) {
     .jory {
         margin-top: 50px;
         width: auto;
+    }
+    .jmd-large{
+        width:104px!important;
+        min-width:104px!important;
+        height:104px!important;
+        min-height: 104px!important;
+        border-radius: 104px!important;
     }
 }
 
@@ -26,7 +52,7 @@ body {
 
 .sidebar {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 1024px;
 }
 
 

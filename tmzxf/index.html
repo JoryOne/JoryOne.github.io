@@ -16,13 +16,20 @@
 <div class="jory">
     <div class="sidebar" id="app" v-cloak>
         <div class="header">
-            <h2>《他们最幸福》</h2>
-            <div>
-                <md-avatar class="md-large">
+            <md-list>
+                <md-list-item>
+                  <md-avatar class="jmd-large md-large">
                   <img src="assets/123.png" alt="People">
                 </md-avatar>
-                <md-progress :md-progress="60"></md-progress>
-            </div>
+                 <div style="position:relative">
+                     <h4 style="margin:0 0">他们最幸福</h4>
+                     <p style="margin:0 0">伴我行天涯</p>
+                     <p style="margin:0 0">-05:34</p>
+                     <md-progress :md-progress="process" onclick="calCoord(event)" id="processBar"></md-progress>
+                     <div class="tip_cls"  :style="[proValue]"></div>
+                 </div>
+                </md-list-item>
+            </md-list>
             <div class="quote">
                 <p class="quote-text">&nbsp;&nbsp;&nbsp;&nbsp;浪迹天涯的孩子，忽晴忽雨的江湖，祝你有梦为马，永远随处可栖。</p>
             </div>

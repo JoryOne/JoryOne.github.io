@@ -28,7 +28,6 @@ ul, ol {
 .jory {
     position: relative;
     margin: 100px auto 0;
-    width: 960px;
 }
 
 @media (max-width: 767px) {
@@ -100,7 +99,7 @@ ul, ol {
 
 .sidebar {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 1024px;
 }
 
 @media (max-width: 767px) { 
