@@ -1,0 +1,70 @@
+
+body {
+    font: 20px/2.0 "Lato","Helvetica Neue","PingFang-SC-Regular","STHeiti", "Helvetica","Arial","Verdana","sans-serif","Microsoft YaHei", arial, sans-serif;
+    color: #333;
+}
+
+
+.jory {
+    position: relative;
+    margin: 100px auto 0;
+}
+
+
+.tip_cls{
+    position:absolute;
+    margin-top:-13px;
+    width:20px;
+    height:20px;
+    border-radius: 20px;
+    left:50%;
+    margin-left:-10px;
+    background-color: #3f51b5;
+}
+
+.jmd-large{
+    width:164px!important;
+    min-width:164px!important;
+    height:164px!important;
+    min-height: 164px!important;
+    border-radius: 164px!important;
+}
+
+@media (max-width: 767px) {
+    .jory {
+        margin-top: 50px;
+        width: auto;
+    }
+    .jmd-large{
+        width:104px!important;
+        min-width:104px!important;
+        height:104px!important;
+        min-height: 104px!important;
+        border-radius: 104px!important;
+    }
+}
+
+.jory h2 {
+    text-align: center;
+    position: relative;
+    opacity: 0.9;
+}
+
+.sidebar {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+
+@media (max-width: 767px) { 
+    .sidebar {
+        padding: 0 40px;
+    }
+}
+
+[v-cloak] {
+  display:none !important;
+}
+.demo-slider {
+  margin-bottom: 16px;
+}
