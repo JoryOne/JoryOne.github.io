@@ -11,7 +11,6 @@
 ```javascript
   var wangwenqiang = {
     nickName  : "jory",
-    homePage : "www.jory.wang",
     site : "www.jory.wang"
   }
 ```

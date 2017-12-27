@@ -13,6 +13,7 @@ body {
     color: white;
 }
 
+
 a {
     color: #333;
 }
@@ -31,7 +32,7 @@ ul, ol {
 
 .jory {
     position: relative;
-    margin: 100px auto 0;
+    margin: 100px auto;
     width: 960px;
 }
 
@@ -64,7 +65,6 @@ ul, ol {
     opacity: 0.2;
 
 }
-
 
 .quote cite::before {
     content: "-";
@@ -110,37 +110,6 @@ ul, ol {
     .sidebar {
         padding: 0 40px;
     }
-}
-
-.location {
-    margin-top: 40px;
-    text-align: center;
-}
-.location-text {
-    display: inline-block;
-    vertical-align: top;
-    font-size: 13px;
-    line-height: 40px;
-}
-
-.relocating {
-    opacity: 0;
-    color: #ccc;
-    font-size: 13px;
-    text-align: center;
-    transition: all .3s ease;
-}
-
-.content {
-    display: none;
-    position: relative;
-    margin-left: 400px;
-}
-
-.close {
-    position: absolute;
-    top: -10px;
-    right: 10px;
 }
 
 .fm-icon {
