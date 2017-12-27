@@ -30,25 +30,6 @@ ul, ol {
     list-style: none;
 }
 
-.jory {
-    position: relative;
-    margin: 100px auto;
-    width: 960px;
-}
-
-@media (max-width: 767px) {
-    .jory {
-        margin-top: 50px;
-        width: auto;
-    }
-}
-
-.jory h1 {
-    text-align: center;
-    position: relative;
-    top: -10px;
-}
-
 .quote {
     position: relative;
     margin: 40px 0;
@@ -101,14 +82,18 @@ ul, ol {
     margin-left: 0;
 }
 
-.sidebar {
+.mainContent {
     margin: 0 auto;
     max-width: 500px;
+    padding: 100px 40px;
+}
+.mainContent h1 {
+    text-align: center;
 }
 
 @media (max-width: 767px) { 
-    .sidebar {
-        padding: 0 40px;
+    .mainContent {
+        padding: 40px;
     }
 }
 

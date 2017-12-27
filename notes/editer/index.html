@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="../assets/favicon.ico?v=1.0" mce_href="../assets/favicon.ico?v=1.0" rel="shortcut icon" type="image/x-icon" /> 
+    <title>Markdown在线编辑</title>
+    <meta name="description" content="Markdown在线编辑器">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  type="text/css"rel="stylesheet"  href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css"/>
+    <script type="text/javascript" src="//cdn.bootcss.com/showdown/1.6.4/showdown.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/angular.js/1.2.32/angular.min.js"></script>
+</head>
+<style>
+	html {
+		font-family: sans-serif;
+		line-height: 1.15;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%
+	}
+
+	body {
+		margin: 20px;
+		min-width:780px;
+	}
+    #edit-left{
+		width:49%; 
+		float:left;
+		min-height:600px;
+    }
+    #md_result{
+        width:49%; 
+        float:right;
+        min-height:600px;
+    }
+
+</style>
+<body ng-app="oneApp">
+    <div  ng-controller="oneCtrl">
+	    <textarea id='edit-left' ng-change="onChange()" ng-model="myValue"></textarea>
+	    <div id='md_result'></div>
+    </div>
+</body>
+
+<script type="text/javascript">
+angular.module('oneApp', [])
+.controller('oneCtrl', ['$scope', function($scope) {
+    $scope.myValue = "";
+    $scope.onChange = function() {
+        var text = $scope.myValue;
+        var converter = new showdown.Converter();
+        var html = converter.makeHtml(text);
+        document.getElementById("md_result").innerHTML = html;
+    };
+}]);
+</script>
+</body>
+</html>

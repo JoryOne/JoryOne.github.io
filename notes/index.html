@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Jory Wang | 笔记</title>
+    <link rel="icon" href="../favicon.ico?v=1.1" />
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 760px;
+            padding: 40px 20px;
+        }
+        ::selection {
+            background: #222!important;
+            color: white;
+        }
+    </style>
+    <link href="https://cdn.bootcss.com/github-markdown-css/2.9.0/github-markdown.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="md_result" class="markdown-body">
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/markdown-it/8.4.0/markdown-it.min.js"></script>
+<script type="text/javascript">
+    
+    function httpGet( url, time, callback ){
+        var request = new XMLHttpRequest();
+        var timeout = false;
+        var timer = setTimeout( function(){
+            timeout = true;
+            request.abort();
+        }, time );
+        request.open( "GET", url );
+        request.onreadystatechange = function(){
+            if( request.readyState !== 4 ) return;
+            if( timeout ) return;
+            clearTimeout( timer );
+            if( request.status === 200 ){
+                callback( request.responseText );
+            }
+        }
+        request.send( null );
+    }
+
+    function goBlog(name){
+        name = name || "notes-list";
+        var url = '/notes/blog/'+ name + '.md';
+
+        httpGet(url, 5000, function(rsp){
+            if(rsp){
+                var md = window.markdownit();
+                var html = md.render(rsp);
+                document.getElementById("md_result").innerHTML = html;
+            }
+            else{
+                window.location.hash = "notes-list";
+            }
+        });
+    };
+
+    function handleHash(){
+      var hash = window.location.hash.replace('#','');
+      goBlog(hash)
+    };
+    
+    handleHash();
+
+    window.onhashchange = function(){
+      handleHash();
+    };
+
+    /*百度统计*/
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?64933df303a2df479620f304600af522";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+</script>
+
+</body>
+</html>

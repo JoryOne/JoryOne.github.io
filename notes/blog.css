@@ -1,0 +1,17 @@
+
+.mainContent {
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 40px 20px;
+}
+
+@media (max-width: 767px) { 
+    .mainContent {
+        padding: 40px 20px;
+    }
+}
+
+::selection {
+    background: #222!important;
+    color: white;
+}
