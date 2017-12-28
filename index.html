@@ -97,7 +97,7 @@
                 newMusic = parseInt(Math.random() * listLength);
             }
             currentMusic = newMusic;
-            var musicDetail = getMusicDetails(listData, currentMusic);
+            var musicDetail = getMusicDetails(musicListData, currentMusic);
             $("#musicTitle").html(musicDetail.title);
             music.src = musicDetail.src;
             $(".ion-ios-play").hide();
