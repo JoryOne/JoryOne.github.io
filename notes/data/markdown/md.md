@@ -10,7 +10,7 @@
 
 # Markdown.md
 
-![http://www.markdown.cn/](data/markdown/dalian-donggang.jpg)
+![http://www.markdown.cn/](data/markdown/dalian-donggang.png)
 
 
 **目录 (Table of Contents)**
