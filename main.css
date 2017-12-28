@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 20px/2.0 "Lato","Helvetica Neue","PingFang-SC-Regular","STHeiti", "Helvetica","Arial","Verdana","sans-serif","Microsoft YaHei", arial, sans-serif;
+    color: #333;
+}
+
+::selection {
+    background: #222;
+    color: white;
+}
+
+
+a {
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+p {
+    margin: 20px 0;
+}
+
+.quote {
+    position: relative;
+    margin: 40px 0;
+    color: #666;
+    text-align: center;
+}
+
+.quote::before, .quote::after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 24px;
+    opacity: 0.2;
+
+}
+
+.quote cite::before {
+    content: "-";
+    padding: 0 5px;
+}
+
+.quote p, .quote div {
+    text-align: center
+}
+
+.menu {
+    text-align: center;
+    font-size: 14px;
+    border-top:1px solid #ccc;
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.menu a {
+    color: #333!important;
+    font-weight: 200!important;
+    display: inline-block !important;
+    position: relative !important;
+    margin-left: 10px !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.menu a:hover {
+    border-bottom: 1px solid #333 !important;
+}
+
+.menu a:active {
+    top: 1px !important;
+}
+
+.menu a:first-child {
+    margin-left: 0;
+}
+
+
+/*************** Start of FM *************************/
+.fm-content {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 100px 40px;
+}
+.fm-content h1 {
+    text-align: center;
+}
+
+@media (max-width: 767px) { 
+    .fm-content {
+        padding: 40px;
+    }
+}
+
+.fm-icon {
+    font-size:25px;
+    color:#666;
+    margin:20px;
+    cursor:pointer;
+}
+.fm-container {
+    text-align: center;
+    background: #efefef;
+}
+
+.fm-process-bar {
+    width: 0%;
+    background: #999;
+    height: 2px;
+}
+
+
+/*************** Start of About *************************/
+.aboutContent {
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 100px 40px;
+}
+
+@media (max-width: 767px) {
+    .aboutContent {
+        padding: 20px;
+    }
+}
+
+.aboutContent p {
+    margin:30px 0;
+    line-height:35px;
+    color:#333;
+    word-wrap: break-word;
+    font-size:16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.aboutContent a {
+    color: #026ed2;
+    text-decoration:none;
+    font-weight: 550;
+}
+
+.aboutContent ul {
+    margin:30px 0 0 5%;
+}
+
+.aboutContent ul li {
+    font-size:16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.we-chat {
+    width:150px;
+    height:150px;
+}
+
+
+/*************** Start of iHome *************************/
+.ihome-content {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 50px 40px;
+}
+
+.ihome-content h1 {
+    margin-top:80px;
+    margin-bottom:60px;
+    text-align: center;
+}
+
+@media (max-width: 767px) { 
+    .ihome-content {
+        padding: 40px;
+    }
+}
+
+.i-home-frame {
+    margin:0 auto;
+}

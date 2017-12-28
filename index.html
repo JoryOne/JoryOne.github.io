@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Jory Wang's Personal Website</title>
-    <link rel="icon" href="./favicon.ico?v=1.1" />
-    <link type="text/css"rel="stylesheet"  href="../style.css?v=1.4"/>
+    <link rel="icon" href="favicon.ico" />
+    <link type="text/css"rel="stylesheet"  href="main.css"/>
     <link type="text/css"rel="stylesheet"  href="http://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css"/>
 </head>
 <body>
-    <div class="mainContent">
+    <div class="fm-content">
         <h1>J-FM</h1>
         <div class="fm-container">
-            <h3 id="musicTitle">朱七-青春</h3>
+            <h3 id="musicTitle">--</h3>
             <div>
                 <audio id="music"></audio>
                 <div id="musicTime">0:00/0:00</div>
@@ -22,17 +22,20 @@
                 <span onClick="randomPlay()" class="ion-ios-skipforward fm-icon" ></span>
                 <span class="ion-arrow-down-a fm-icon" ></span>
             </div>
-            <div class="process-bar"></div>
+            <div class="fm-process-bar"></div>
         </div>
         <div class="quote">
-            <p id="beautyWord">找一个下午，伴随着音乐，咖啡，和落地窗，静静地做一个世界的旁观者。</p>
+            <p>找一个下午，伴随着音乐，咖啡，和落地窗，静静地做一个世界的旁观者。</p>
         </div>
-        <div class="menu">
+        <div class="menu i-home-menu">
+            <a href="/notes">笔记</a>
+            <a href="/ihome">iHome</a>
             <a href="/about">关于</a>
         </div>
     </div>
+
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="fm-list.js?t=1221"></script>
+<script type="text/javascript" src="fm-list.js?v=1.2"></script>
 <script>
     var timer = null;
     $(document).ready(function () {
@@ -54,25 +57,25 @@
                 music.pause();
             }
         }
+        
         function musicChange(){
-            var cur = music.currentTime || 0;
-            var all = music.duration || 0;
-            var curSec = parseInt(cur%60);
+            var cur = music.currentTime || 0, all = music.duration || 0, curSec = parseInt(cur%60);
             curSec = curSec < 10 ? '0' + curSec : curSec;
             $('#musicTime').html(parseInt(cur/60) +':' + curSec +'/' +  parseInt(all/60) +':' + parseInt(all%60));
             var percentage = cur/all * 100 + '%';
             $(".process-bar").css('width',percentage);
         }
+        
         music.onended = function(){
             clearInterval(timer);
             timer = null;
             $(".process-bar").css('width','0%');
             randomPlay();
         }
-        var listData = musicListData;
-        var listLength = listData.length;
-        var currentMusic = parseInt(Math.random() * listLength);
 
+        var listLength = musicListData.length;
+        var currentMusic = parseInt(Math.random() * listLength);
+        
         function getMusicDetails(list, index){
             var src = list[index];
             var srcArr = src.split('/');
@@ -82,12 +85,12 @@
                 title:title.split('.')[0]
             };
         }
-        var musicDetail = getMusicDetails(listData, currentMusic);
-         
+
+        var musicDetail = getMusicDetails(musicListData, currentMusic);  
         $("#musicTitle").html(musicDetail.title);
         music.src = musicDetail.src;
-
         var newMusic = currentMusic;
+        
         function randomPlay(){
             $('#musicTime').html("0:00/0:00");
             while(listLength > 1 && newMusic===currentMusic){
@@ -95,10 +98,8 @@
             }
             currentMusic = newMusic;
             var musicDetail = getMusicDetails(listData, currentMusic);
-         
             $("#musicTitle").html(musicDetail.title);
             music.src = musicDetail.src;
-
             $(".ion-ios-play").hide();
             $(".ion-ios-pause").show();
             music.play();
@@ -111,8 +112,9 @@
         window.play = play;
         window.randomPlay = randomPlay;
         window.musicChange = musicChange;
-
     });
+
+    console.log("\r\n'大 道 至 简 \r\n知 行 合 一' \r\n\r\n  - 与君共勉!");
 
     var _hmt = _hmt || [];
     (function() {
@@ -121,6 +123,7 @@
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+
 </script>
 </body>
 </html>

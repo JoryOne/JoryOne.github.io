@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Jory Wang | 笔记</title>
-    <link rel="icon" href="../favicon.ico?v=1.1" />
+    <link rel="icon" href="../favicon.ico" />
     <style>
         body {
             margin: 0 auto;
@@ -13,45 +13,52 @@
             padding: 40px 20px;
         }
         ::selection {
-            background: #222!important;
+            background: #222;
             color: white;
+        }
+        .menu {
+            text-align: right;
+            border-top:1px solid #ccc;
+            margin:25px 0;
+        }
+        .menu a:hover {
+            border-bottom: 1px solid #333;
+        }
+        .menu a {
+            font-size:14px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
         }
     </style>
     <link href="https://cdn.bootcss.com/github-markdown-css/2.9.0/github-markdown.min.css" rel="stylesheet">
 </head>
-
 <body>
-    <div id="md_result" class="markdown-body">
+    <div id="md_result" class="markdown-body"></div>
+    <div class="menu">
+        <a href="#list/list">目录</a>
+        <a href="/">/首页</a>
     </div>
 </body>
 
 <script src="https://cdn.bootcss.com/markdown-it/8.4.0/markdown-it.min.js"></script>
-<script type="text/javascript">
-    
-    function httpGet( url, time, callback ){
+<script type="text/javascript"> 
+    console.log("\r\n'大 道 至 简 \r\n知 行 合 一' \r\n\r\n  - 与君共勉!");
+    function httpGet( url, callback ){
         var request = new XMLHttpRequest();
-        var timeout = false;
-        var timer = setTimeout( function(){
-            timeout = true;
-            request.abort();
-        }, time );
         request.open( "GET", url );
         request.onreadystatechange = function(){
             if( request.readyState !== 4 ) return;
-            if( timeout ) return;
-            clearTimeout( timer );
             if( request.status === 200 ){
+                document.title = request.responseText.trim().split('\n')[0].replace('#','');
                 callback( request.responseText );
             }
         }
         request.send( null );
     }
-
-    function goBlog(name){
-        name = name || "notes-list";
-        var url = '/notes/blog/'+ name + '.md';
-
-        httpGet(url, 5000, function(rsp){
+    function goBlog(notePath){
+        var url = '/notes/data/'+ (notePath || "list/list") + '.md';
+        httpGet(url, function(rsp){
             if(rsp){
                 var md = window.markdownit();
                 var html = md.render(rsp);
@@ -62,14 +69,12 @@
             }
         });
     };
-
     function handleHash(){
       var hash = window.location.hash.replace('#','');
       goBlog(hash)
-    };
-    
-    handleHash();
+    };  
 
+    handleHash();
     window.onhashchange = function(){
       handleHash();
     };
@@ -84,6 +89,5 @@
     })();
 
 </script>
-
 </body>
 </html>
