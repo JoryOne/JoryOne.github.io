@@ -36,7 +36,7 @@
 <body>
     <div id="md_result" class="markdown-body"></div>
     <div class="menu">
-        <a href="#list/list">目录</a>
+        <a href="/notes">目录</a>
         <a href="/">/首页</a>
     </div>
 </body>
@@ -53,11 +53,15 @@
                 document.title = request.responseText.trim().split('\n')[0].replace('#','');
                 callback( request.responseText );
             }
+            else{
+                callback( null );
+            }
         }
         request.send( null );
     }
-    function goBlog(notePath){
-        var url = '/notes/data/'+ (notePath || "list/list") + '.md';
+
+    function goHash(hash){
+        var url = '/notes/assets/'+ (hash || "sumary") + '.md' + "?" + (new Date()).getDay();
         httpGet(url, function(rsp){
             if(rsp){
                 var md = window.markdownit();
@@ -65,19 +69,20 @@
                 document.getElementById("md_result").innerHTML = html;
             }
             else{
-                window.location.hash = "notes-list";
+                window.location.hash = "";
             }
         });
     };
-    function handleHash(){
-      var hash = window.location.hash.replace('#','');
-      goBlog(hash)
-    };  
 
-    handleHash();
+    function handleHash(){
+      goHash(window.location.hash.replace('#',''))
+    };  
+ 
     window.onhashchange = function(){
       handleHash();
     };
+
+    handleHash();
 
     /*百度统计*/
     var _hmt = _hmt || [];

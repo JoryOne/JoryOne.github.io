@@ -20,7 +20,7 @@
                 <span onClick="play()" class="ion-ios-play fm-icon" ></span>
                 <span onClick="play()" class="ion-ios-pause fm-icon hidden" ></span>
                 <span onClick="randomPlay()" class="ion-ios-skipforward fm-icon" ></span>
-                <span class="ion-arrow-down-a fm-icon" ></span>
+                <a id="downloadMusic" href="" download=""><span class="ion-arrow-down-a fm-icon" ></span></a>
             </div>
             <div class="fm-process-bar"></div>
         </div>
@@ -88,6 +88,7 @@
 
         var musicDetail = getMusicDetails(musicListData, currentMusic);  
         $("#musicTitle").html(musicDetail.title);
+        $("#downloadMusic")[0].href = musicDetail.src;
         music.src = musicDetail.src;
         var newMusic = currentMusic;
         
@@ -100,6 +101,7 @@
             var musicDetail = getMusicDetails(musicListData, currentMusic);
             $("#musicTitle").html(musicDetail.title);
             music.src = musicDetail.src;
+            $("#downloadMusic")[0].href = musicDetail.src;
             $(".ion-ios-play").hide();
             $(".ion-ios-pause").show();
             music.play();
